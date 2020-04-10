@@ -1,64 +1,90 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
   <div class="text-center">
-  <h1>
-     {{ title }}!
-  </h1>
+    <h1>
+      {{ title }}!
+    </h1>
   </div>
-     
-      <div class="input-group mb-3">
-          <input type="text" [value] = "expenses" class="form-control" placeholder="Your Expense's will be displayed here" aria-label="Example text with button addon" aria-describedby="button-addon1" disabled>  
-        <div class="input-group-append">
-            <button class="btn btn-outline-danger" type="button" id="button-addon1">Clear</button>
 
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      [value]="expenses"
+      class="form-control"
+      placeholder="Your Expense's will be displayed here"
+      aria-label="Example text with button addon"
+      aria-describedby="button-addon1"
+      disabled
+    />
+    <div class="input-group-append">
+      <button class="btn btn-outline-danger" type="button" id="button-addon1">
+        Clear
+      </button>
+    </div>
+  </div>
+  <div class="input-group mb-3">
+    <input
+      type="number"
+      [value]="expenses"
+      class="form-control"
+      placeholder="Enter Your Value Here ('+') for Income ('-') for expense"
+      aria-label="Example text with button addon"
+      aria-describedby="button-addon1"
+    />
+    <div class="input-group-append">
+      <button class="btn btn-outline-success" type="button" id="button-addon1">
+        Add Amount
+      </button>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Income</th>
+        <th scope="col">Expenses</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div
+            class="alert alert-success alert-dismissible fade show"
+            role="alert"
+          >
+            <strong class="text text-success">
+              Income
+            </strong>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="alert"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-        </div>
-        <div class="input-group mb-3">
-            <input type="number" [value] = "expenses" class="form-control" placeholder="Enter Your Value Here ('+') for Income ('-') for expense" aria-label="Example text with button addon" aria-describedby="button-addon1" >  
-          <div class="input-group-append">
-              <button class="btn btn-outline-success" type="button" id="button-addon1">Add Amount</button>
-            </div>
+        </td>
+
+        <td>
+          <div
+            class="alert alert-success alert-dismissible fade show"
+            role="alert"
+          >
+            <strong class="text text-danger">
+              Expense
+            </strong>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="alert"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-
-          <table class="table">
-              <thead class="thead-dark">
-                <tr>
-                  
-                  <th scope="col">Income </th>
-                  <th scope="col">Expenses</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                    <td>
-                      <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong class="text text-success">
-                             Income 
-                        </strong> 
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                    </td>
-
-                  
-                  <td>
-                      <div class="alert alert-success alert-dismissible fade show" role="alert">
-                          <strong class="text text-danger">
-                                Expense
-                          </strong> 
-                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            
-            
-                
-            
-        
-
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
