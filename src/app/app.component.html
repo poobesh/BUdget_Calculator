@@ -1,45 +1,110 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
   <div class="text-center">
-  <h1>
-     {{ title }}!
-  </h1>
+    <h1>
+      {{ title }}!
+    </h1>
   </div>
-     
-      <div class="input-group mb-3">
-          <input type="text" [value] = "expenses" class="form-control" placeholder="Your Expense's will be displayed here" aria-label="Example text with button addon" aria-describedby="button-addon1" disabled>  
-        <div class="input-group-append">
-            <button class="btn btn-outline-danger" type="button" id="button-addon1">Clear</button>
 
-          </div>
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      [value]="expense"
+      class="form-control"
+      placeholder="Your Expense's will be displayed here"
+      aria-label="Example text with button addon"
+      aria-describedby="button-addon1"
+      disabled
+    />
+    <div class="input-group-append">
+      <button
+        class="btn btn-outline-danger"
+        type="button"
+        id="button-addon1"
+        (click)="onClear()"
+      >
+        Clear
+      </button>
+    </div>
+  </div>
+  <div class="input-group mb-3">
+      <input
+        type="number"
+        #data
+        class="form-control"
+        placeholder="Enter Your Value Here ('+') for Income ('-') for expense"
+        aria-label="Example text with button addon"
+        aria-describedby="button-addon1"
+      />
+      <div class="input-group-append">
+          <button
+            class="btn btn-outline-success"
+            type="button"
+            id="button-addon1"
+            (click)="onAddAmount(data)"
+          >
+            Add Amount
+          </button>
         </div>
-        <div class="input-group mb-3">
-            <input type="number" [value] = "expenses" class="form-control" placeholder="Enter Your Value Here ('+') for Income ('-') for expense" aria-label="Example text with button addon" aria-describedby="button-addon1" >  
-          <div class="input-group-append">
-              <button class="btn btn-outline-success" type="button" id="button-addon1">Add Amount</button>
-            </div>
-          </div>
+    </div>
 
-          <table class="table">
-              <thead class="thead-dark">
-                <tr>
-                  
-                  <th scope="col">Income </th>
-                  <th scope="col">Expenses</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  
-                  <td> nop </td>
-                  <td>@mdo</td>
-                </tr>
-              </tbody>
-            </table>
-            
-            
-                
-            
-        
+    <div *ngFor = "let data of expenses">
+      {{x}}
+    </div>
+
+
+
+  <table class="table mx-auto">
+      <tr>
+        <td>
+           <table class="table">
+               <thead class="thead-dark">
+                 <tr>
+                   
+                   <th scope="col">Income </th>
+                   
+                 </tr>
+               </thead>
+               <tbody>
+                 <div *ngFor = "let x of expenses">
+                 <tr>
+                   
+                   <td> <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                     <strong>{{x}}</strong>
+                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                       <span aria-hidden="true">&times;</span>
+                     </button>
+                   </div> </td>
+                   
+                 </tr>
+                 </div>
+               </tbody>
+             </table>
+        </td>
+        <td>
+           <table class="table">
+               <thead class="thead-dark">
+                 <tr>
+                   
+                   <th scope="col">Expenses </th>
+                   
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr>
+                   
+                   <td> <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                     <strong>Data</strong>
+                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                       <span aria-hidden="true">&times;</span>
+                     </button>
+                   </div> </td>
+                   
+                 </tr>
+               </tbody>
+             </table>
+        </td>
+      </tr>
+    </table>
 
 </div>
